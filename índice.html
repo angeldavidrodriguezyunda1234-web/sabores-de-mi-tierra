@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sabores de mi tierra — Artesanías</title>
+  <meta name="description" content="Sabores de mi tierra — Artesanías tradicionales hechas a mano. Productos, historia y contacto." />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #fffaf6;
+      --card: #ffffff;
+      --accent: #b85c2e;   /* color tierra / terracota */
+      --accent-dark: #783818;
+      --muted: #6b6b6b;
+      --shadow: 0 8px 24px rgba(16,24,32,0.08);
+      --radius: 12px;
+      --maxw: 1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      background: linear-gradient(180deg,var(--bg),#fff);
+      color:#1b1b1b;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo {
+      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+      color:white;display:grid;place-items:center;font-weight:700;font-size:18px;box-shadow:var(--shadow)
+    }
+    nav a{margin-left:16px;color:var(--muted);text-decoration:none;font-weight:600}
+    nav a:hover{color:var(--accent)}
+    .cta{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin-top:18px}
+    .hero-card{background:var(--card);padding:28px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero h1{font-size:32px;margin:0 0 10px;color:var(--accent-dark)}
+    .lead{color:var(--muted);margin:0 0 16px}
+    .badges{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{background:#fff2ec;padding:8px 12px;border-radius:999px;color:var(--accent-dark);font-weight:600}
+
+    .hero-visual{background:linear-gradient(180deg,#fff,#fff7f2);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-visual img{width:100%;height:auto;border-radius:8px;display:block;object-fit:cover}
+
+    /* Products */
+    .products{margin-top:26px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .product{background:var(--card);border-radius:12px;padding:0;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+    .product .thumb{height:160px;background:#f6e9e3;background-size:cover;background-position:center}
+    .product .info{padding:14px}
+    .product h3{margin:0 0 6px;font-size:18px;color:var(--accent-dark)}
+    .product p{margin:0;color:var(--muted);font-size:14px}
+
+    /* About */
+    .about{display:flex;gap:18px;align-items:center;margin-top:28px}
+    .about .text{flex:1}
+    .about .image{width:360px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+    .about img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:28px}
+    form{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow)}
+    label{display:block;font-weight:600;margin-bottom:6px;color:var(--accent-dark)}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-bottom:12px;font-family:inherit}
+    button.primary{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+
+    .side-contact{background:#fff7f2;padding:16px;border-radius:12px;box-shadow:var(--shadow)}
+
+    /* Footer */
+    footer{margin-top:36px;padding:18px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f1e6e0}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero,.about,.contact{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .grid{grid-template-columns:1fr}
+      nav a{display:none}
+      .logo{width:56px;height:56px}
+      .hero{grid-template-columns:1fr}
+    }
+
+    /* small utilities */
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">SMT</div>
+        <div>
+          <div style="font-weight:700;font-size:18px">Sabores de mi tierra</div>
+          <div style="font-size:12px;color:var(--muted)">Artesanías tradicionales hechas a mano</div>
+        </div>
+      </div>
+
+      <nav aria-label="Menú principal">
+        <a href="#productos">Productos</a>
+        <a href="#about">Nuestra historia</a>
+        <a href="#contacto">Contacto</a>
+        <a class="cta" href="#contacto">Comprar / Cotizar</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-card">
+          <h1 id="hero-title">Artesanías con identidad, hecho desde nuestra tierra</h1>
+          <p class="lead">En <strong>Sabores de mi tierra</strong> reunimos artesanos locales que crean piezas únicas: cerámica, textiles, canastos, jabones y recuerdos que cuentan historias.</p>
+
+          <div class="badges" aria-hidden="true">
+            <div class="badge">Hecho a mano</div>
+            <div class="badge">Materiales locales</div>
+            <div class="badge">Envíos a todo el país</div>
+          </div>
+
+          <p style="margin-top:14px;color:var(--muted)">Explora nuestro catálogo, conoce a los artesanos y solicita pedidos personalizados para tu tienda o regalo especial.</p>
+
+          <div style="margin-top:16px;display:flex;gap:12px">
+            <a class="cta" href="#productos">Ver productos</a>
+            <a style="padding:10px 14px;border-radius:10px;background:#fff;border:1px solid #f1e6e0;text-decoration:none;font-weight:700;color:var(--accent-dark)" href="#about">Conócenos</a>
+          </div>
+        </div>
+
+        <aside class="hero-visual" aria-hidden="true">
+          <!-- Sustituye la imagen por assets/hero.jpg -->
+          <img src="assets/hero.jpg" alt="Manos trabajando artesanías - Sabores de mi tierra">
+        </aside>
+      </section>
+
+      <!-- Productos / Portafolio -->
+      <section id="productos" class="products" aria-labelledby="productos-title">
+        <h2 id="productos-title" style="margin:18px 0;color:var(--accent-dark)">Nuestros productos</h2>
+        <div class="grid" role="list">
+          <!-- Producto 1 -->
+          <article class="product" role="listitem" aria-labelledby="p1">
+            <div class="thumb" style="background-image:url('assets/img1.jpg');"></div>
+            <div class="info">
+              <h3 id="p1">Cerámica tradicional</h3>
+              <p>Vasijas, tazas y piezas decorativas con técnicas ancestrales y esmaltes naturales.</p>
+            </div>
+          </article>
+
+          <!-- Producto 2 -->
+          <article class="product" role="listitem" aria-labelledby="p2">
+            <div class="thumb" style="background-image:url('assets/img2.jpg');"></div>
+            <div class="info">
+              <h3 id="p2">Textiles y mantas</h3>
+              <p>Tejidos a mano con fibras locales y patrones inspirados en la región.</p>
+            </div>
+          </article>
+
+          <!-- Producto 3 -->
+          <article class="product" role="listitem" aria-labelledby="p3">
+            <div class="thumb" style="background-image:url('assets/img3.jpg');"></div>
+            <div class="info">
+              <h3 id="p3">Canastos y cestería</h3>
+              <p>Diseños funcionales y decorativos, elaborados con materiales renovables.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="about" aria-labelledby="about-title">
+        <div class="text">
+          <h2 id="about-title" style="color:var(--accent-dark)">Nuestra historia</h2>
+          <p style="color:var(--muted)">Sabores de mi tierra nace con la idea de preservar tradiciones artesanales, conectando productores con clientes que valoran lo auténtico. Trabajamos con comunidades locales, garantizando comercio justo y prácticas sostenibles.</p>
+
+          <ul style="color:var(--muted);margin-top:12px">
+            <li><strong>Artesanos locales:</strong> Apoyo directo a productores.</li>
+            <li><strong>Productos únicos:</strong> Ediciones limitadas y piezas personalizadas.</li>
+            <li><strong>Sostenibilidad:</strong> Materiales naturales y empaques responsables.</li>
+          </ul>
+        </div>
+
+        <div class="image" aria-hidden="true">
+          <img src="assets/about.jpg" alt="Artesana trabajando">
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section id="contacto" class="contact" aria-labelledby="contacto-title">
+        <div>
+          <h2 id="contacto-title" style="color:var(--accent-dark)">Contáctanos</h2>
+          <p style="color:var(--muted)">¿Tienes un pedido especial o quieres vender con nosotros? Escríbenos y te responderemos en breve.</p>
+
+          <form id="contactForm" aria-label="Formulario de contacto">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" placeholder="tunombre@ejemplo.com" required>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos tu pedido o pregunta..." required></textarea>
+
+            <button class="primary" type="submit">Enviar mensaje</button>
+          </form>
+        </div>
+
+        <aside class="side-contact" aria-hidden="true">
+          <div style="font-weight:700;color:var(--accent-dark)">Información</div>
+          <div style="margin-top:8px;color:var(--muted)"><strong>Teléfono:</strong> +57 300 000 0000</div>
+          <div style="margin-top:6px;color:var(--muted)"><strong>Email:</strong> contacto@saboresdemitierra.co</div>
+          <div style="margin-top:12px;color:var(--muted)"><strong>Dirección:</strong> Plaza Central, Ciudad</div>
+
+          <div style="margin-top:16px">
+            <strong style="color:var(--accent-dark)">Horario</strong>
+            <div style="color:var(--muted);margin-top:6px">Lun - Vie: 9:00 - 18:00</div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <strong>Sabores de mi tierra</strong> — Artesanías tradicionales</div>
+      <div style="font-size:13px;color:var(--muted)">Hecho con ❤️ por la comunidad local</div>
+    </footer>
+  </div>
+
+  <script>
+    // Previene envío real (demo): muestra un resumen y limpia el formulario.
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value || '—';
+      const email = document.getElementById('email').value || '—';
+      const mensaje = document.getElementById('mensaje').value || '—';
+      alert('Gracias, ' + nombre + '!\\n\\nRecibimos tu mensaje:\\n' + mensaje + '\\n\\nTe contactaremos al: ' + email);
+      this.reset();
+    });
+  </script>
+</body>
+</html>
